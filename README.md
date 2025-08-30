@@ -1,228 +1,149 @@
-🎮🎌 MultiDimension - Game and Anime Recommender
-A powerful full-stack recommendation system that helps you discover your next favorite anime or game based on intelligent content-based filtering and collaborative recommendations.
-🚀 Demo Screenshots
-Anime Recommendations
-Show Image
-Search and discover anime with intelligent recommendations
-Game Recommendations
-Show Image
-Find your next gaming adventure with personalized suggestions
-✨ Features
+# MultiDimension - Anime & Game Recommender
 
-🔍 Smart Search: Real-time search functionality for both anime and games
-🎯 Intelligent Recommendations: Content-based filtering using similarity algorithms
-📊 Rich Data Display: Beautiful card layouts with ratings, genres, and cover images
-🎨 Modern UI: Clean, responsive interface with smooth animations
-⚡ Fast Performance: Optimized recommendation engine with caching
-🌐 Full-Stack Architecture: Complete web application with API backend
+A full-stack recommendation system that helps you discover anime and games using content-based filtering and machine learning algorithms.
 
-🛠️ Tech Stack
-Backend
+## Features
 
-Python 3.x - Core programming language
-Flask - Web framework for API development
-Flask-CORS - Cross-origin resource sharing
-Pandas - Data manipulation and analysis
-NumPy - Numerical computing
-Scikit-learn - Machine learning algorithms
-Pickle - Model serialization and caching
+- **Smart Search**: Real-time search with fuzzy matching for both anime and games
+- **Content-Based Recommendations**: Uses similarity algorithms to suggest relevant content
+- **Modern Interface**: Clean, responsive design with smooth animations
+- **Fast Performance**: Optimized recommendation engine with model caching
+- **Rich Data Display**: Detailed cards showing ratings, genres, and descriptions
 
-Frontend
+## Tech Stack
 
-HTML5 - Structure and markup
-CSS3 - Modern styling and animations
-JavaScript (ES6+) - Interactive functionality
-Fetch API - HTTP requests to backend
+**Backend**
+- Python 3.x with Flask web framework
+- Flask-CORS for cross-origin requests
+- Pandas and NumPy for data processing
+- Scikit-learn for machine learning algorithms
+- Pickle for model serialization
 
-Data Processing
+**Frontend**
+- HTML5, CSS3, and modern JavaScript
+- Fetch API for backend communication
+- Responsive design for all devices
 
-Matplotlib - Data visualization
-Requests - HTTP library for API calls
-PIL (Python Imaging Library) - Image processing
-Threading - Concurrent operations
-JSON - Data serialization
+**Machine Learning**
+- Content-based filtering using cosine similarity
+- Feature engineering for better recommendations
+- Cached similarity matrices for performance
 
-Machine Learning
+## Project Structure
 
-Content-Based Filtering - Recommendation algorithms
-Cosine Similarity - Content similarity calculations
-Feature Engineering - Data preprocessing and feature extraction
-
-📁 Project Structure
-Current Repository Structure (After Clone)
-Game-Anime-Recommender/
+```
+MultiDimension/
 ├── Anime/
-│   └── AnimeR.ipynb          # Anime recommendation model training
+│   ├── AnimeR.ipynb          # Anime model training
+│   ├── anime.awc             # Anime cache (generated)
+│   ├── popular.PC            # Popular anime data (generated)
+│   ├── pt.pa                 # Pivot table (generated)
+│   └── similarity_scores     # Similarity matrix (generated)
 ├── Game/
-│   └── GameR.ipynb          # Game recommendation model training
-├── __pycache__/             # Python cache files
-├── app.py                   # Flask backend server
-├── index.html              # Frontend interface
-├── script.js               # Frontend JavaScript
-├── style.css               # Styling and animations
-└── README.md               # Project documentation
-Final Structure (After Training Models)
-Game-Anime-Recommender/
-├── Anime/
-│   ├── AnimeR.ipynb          # Anime recommendation model training
-│   ├── anime.awc             # Trained anime cache
-│   ├── popular.PC            # Popular anime data
-│   ├── pt.pa                 # Anime pivot table
-│   └── similarity_scores     # Anime similarity matrix
-├── Game/
-│   ├── GameR.ipynb          # Game recommendation model training
-│   ├── games.gkm             # Trained game cache
-│   ├── popular.PG            # Popular games data
-│   ├── pt.pg                 # Game pivot table
-│   └── similarity_scores     # Game similarity matrix
-├── __pycache__/             # Python cache files
-├── app.py                   # Flask backend server
-├── index.html              # Frontend interface
-├── script.js               # Frontend JavaScript
-├── style.css               # Styling and animations
-└── README.md               # Project documentation
-🚀 Quick Start
-Prerequisites
-Make sure you have Python 3.x installed on your system.
-Installation
+│   ├── GameR.ipynb           # Game model training
+│   ├── games.gkm             # Game cache (generated)
+│   ├── popular.PG            # Popular games data (generated)
+│   ├── pt.pg                 # Pivot table (generated)
+│   └── similarity_scores     # Similarity matrix (generated)
+├── app.py                    # Flask backend
+├── index.html               # Frontend interface
+├── script.js                # JavaScript functionality
+├── style.css                # Styling
+└── README.md                # Documentation
+```
 
-Clone the repository
-bashgit clone https://github.com/your-username/Game-Anime-Recommender.git
-cd Game-Anime-Recommender
+## Installation
 
-Install required packages
-bashpip install flask flask-cors pandas numpy scikit-learn matplotlib requests pillow
+### Prerequisites
+- Python 3.x installed on your system
 
-Download and prepare datasets
-Anime Dataset: [https://www.kaggle.com/datasets/dbdmobile/myanimelist-dataset]
-Game Dataset: [https://www.kaggle.com/datasets/antonkozyriev/game-recommendations-on-steam]
+### Setup Steps
 
-🔧 Setup Instructions
-⚠️ Important: The trained model files are not included in this repository due to their massive size (15+ GB combined). GitHub has file size limitations, and uploading such large files would make the repository impractical to clone and use. You need to generate these files locally by running the training notebooks:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/your-username/MultiDimension.git
+   cd MultiDimension
+   ```
 
-Generate Anime Models
+2. **Install dependencies**
+   ```bash
+   pip install flask flask-cors pandas numpy scikit-learn matplotlib requests pillow
+   ```
 
-Open Anime/AnimeR.ipynb in Jupyter Notebook
-Run all cells to train the anime recommendation model
-This will generate the following files in the Anime/ directory:
+3. **Download datasets**
+   - [Anime Dataset](https://www.kaggle.com/datasets/dbdmobile/myanimelist-dataset)
+   - [Game Dataset](https://www.kaggle.com/datasets/antonkozyriev/game-recommendations-on-steam)
 
-anime.awc - Anime cache file
-popular.PC - Popular anime data
-pt.pa - Anime pivot table
-similarity_scores - Anime similarity matrix
+## Model Training
 
+> **Important**: Model files are not included due to size constraints (15+ GB). You must generate them locally.
 
+### Train Anime Model
+1. Open `Anime/AnimeR.ipynb` in Jupyter Notebook
+2. Run all cells to generate required files in the Anime directory
 
+### Train Game Model
+1. Open `Game/GameR.ipynb` in Jupyter Notebook
+2. Run all cells to generate required files in the Game directory
 
-Generate Game Models
-
-Open Game/GameR.ipynb in Jupyter Notebook
-Run all cells to train the game recommendation model
-This will generate the following files in the Game/ directory:
-
-games.gkm - Game cache file
-popular.PG - Popular games data
-pt.pg - Game pivot table
-similarity_scores - Game similarity matrix
-
-
-
-
-Verify File Structure
-
-Ensure your folder structure matches the "Final Structure" shown above
-All generated files must be in their respective Anime/ and Game/ directories
-The Flask app (app.py) expects these files to be in these exact locations
-
-
-Start the application
-bash# Start the Flask backend server
+### Start the Application
+```bash
 python app.py
+```
 
-# Open index.html in your web browser
-# The app runs on http://localhost:5000
+The server will start at `http://localhost:5000`
 
+## How It Works
 
-🚨 Troubleshooting: If you get file not found errors, make sure you've completed steps 1-3 above. The application cannot run without the trained model files being generated first.
-🎯 How It Works
-Recommendation Algorithm
-The system uses content-based filtering with the following approach:
+The recommendation system uses content-based filtering:
 
-Feature Engineering: Extract meaningful features from anime/game metadata (genres, ratings, descriptions, etc.)
-Similarity Calculation: Use cosine similarity to find content relationships
-Recommendation Generation: Suggest items based on user preferences and content similarity
-Caching System: Store trained models using pickle for fast retrieval
+1. **Feature Engineering**: Extracts features from anime/game metadata (genres, ratings, descriptions)
+2. **Similarity Calculation**: Uses cosine similarity to find content relationships
+3. **Recommendation Generation**: Suggests items based on content similarity
+4. **Caching**: Stores trained models using pickle for fast retrieval
 
-API Endpoints
+## API Endpoints
 
-/api/anime/search - Search anime database
-/api/game/search - Search game database
-/api/anime/recommend - Get anime recommendations
-/api/game/recommend - Get game recommendations
-/api/popular/anime - Fetch popular anime
-/api/popular/games - Fetch popular games
+- `GET /api/anime/search` - Search anime database
+- `GET /api/game/search` - Search game database
+- `POST /api/anime/recommend` - Get anime recommendations
+- `POST /api/game/recommend` - Get game recommendations
+- `GET /api/popular/anime` - Get popular anime
+- `GET /api/popular/games` - Get popular games
 
-🎨 Features in Detail
-Search Functionality
+## Configuration
 
-Real-time search as you type
-Fuzzy matching for better results
-Category filtering (genres, ratings, etc.)
+- **Server**: Runs on localhost:5000 by default
+- **CORS**: Enabled for cross-origin requests
+- **Cache**: Optimized for performance with pickle serialization
 
-Recommendation Engine
+## Data Sources
 
-Content-based filtering using multiple features
-Similarity scoring with weighted algorithms
-Personalized suggestions based on user interaction
+**Anime Dataset**
+- Comprehensive anime metadata including titles, genres, ratings
+- User ratings and reviews
+- Studio information and air dates
 
-User Interface
+**Game Dataset**
+- Game titles, platforms, and genres
+- User ratings and community reviews
+- Release information and metadata
 
-Responsive grid layout for content cards
-Smooth animations and transitions
-Modal dialogs for detailed information
-Tab-based navigation between anime and games
+## Contributing
 
-🔧 Configuration
-The application uses several configuration files:
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/new-feature`)
+3. Commit your changes (`git commit -m 'Add new feature'`)
+4. Push to the branch (`git push origin feature/new-feature`)
+5. Open a Pull Request
 
-Flask Server: Runs on localhost:5000 by default
-CORS: Enabled for cross-origin requests
-Cache Settings: Optimized for performance
-Image Loading: Dynamic loading from external APIs
+## Troubleshooting
 
-📊 Datasets
-This project uses comprehensive datasets containing:
-Anime Dataset
+- **File not found errors**: Ensure you've completed model training steps
+- **Import errors**: Check that all dependencies are installed
+- **Server issues**: Verify Flask is running on the correct port
 
-Anime titles, genres, ratings, episodes
-User ratings and reviews
-Studio information, air dates
-Synopsis and metadata
+## Contact
 
-Game Dataset
-
-Game titles, platforms, genres
-User ratings and reviews
-Release dates, publishers
-Screenshots and metadata
-
-Dataset links will be provided separately due to size constraints
-🤝 Contributing
-
-Fork the repository
-Create a feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
-
-🙏 Acknowledgments
-
-Thanks to the anime and gaming communities for providing rich datasets
-Special appreciation to open-source libraries that made this project possible
-Inspired by recommendation systems from major platforms
-
-📧 Contact
-Aaditya Nepal - @your-handle
-Project Link: https://github.com/Aaditya-Nepal/Game-Anime-Recommender
-
-⭐ Found this helpful? Give it a star! ⭐
+**Author**: Aaditya Nepal  
+**Repository**: [Game&AnimeR](https://github.com/Aaditya-Nepal/Game-Anime-Recommender)
