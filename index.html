@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiDimension Recommender</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Modern multi-domain recommender for Anime and Games with fast search and personalized suggestions.">
+</head>
+<body>
+    <header class="app-header" role="banner">
+        <div class="brand">
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">☰</button>
+            <a href="#" class="logo" aria-label="MultiDimension Recommender Home">
+                <span class="logo-accent">Multi</span>Dimension
+            </a>
+        </div>
+        <form class="search" role="search" aria-label="Universal search" autocomplete="off">
+            <input id="searchInput" name="q" type="search" placeholder="Search anime and games..." aria-label="Search" />
+            <button id="clearSearch" type="button" aria-label="Clear search">✕</button>
+        </form>
+        <nav id="primary-nav" class="tabs" role="navigation" aria-label="Primary">
+            <button class="tab active" data-tab="anime" aria-selected="true">Anime Hub</button>
+            <button class="tab" data-tab="game" aria-selected="false">Gaming Lounge</button>
+        </nav>
+    </header>
+
+    <main id="app" class="app-main" role="main">
+        <section class="popular" id="popular-anime" aria-labelledby="popular-anime-title">
+            <div class="section-header">
+                <h2 id="popular-anime-title">Animes</h2>
+                <div class="controls">
+                    <button class="refresh" data-refresh="anime" aria-label="Refresh anime">↻</button>
+                </div>
+            </div>
+            <div class="grid" id="animeGrid" aria-live="polite" aria-busy="false"></div>
+        </section>
+
+        <section class="popular hidden" id="popular-game" aria-labelledby="popular-game-title">
+            <div class="section-header">
+                <h2 id="popular-game-title">Games</h2>
+                <div class="controls">
+                    <button class="refresh" data-refresh="game" aria-label="Refresh games">↻</button>
+                </div>
+            </div>
+            <div class="grid" id="gameGrid" aria-live="polite" aria-busy="false"></div>
+        </section>
+
+        <section class="results" id="search-results" aria-labelledby="search-results-title">
+            <div class="section-header">
+                <h2 id="search-results-title">Search Results</h2>
+                <div class="controls">
+                    <button id="clearResults" class="secondary" type="button">Clear Results</button>
+                </div>
+            </div>
+            <div class="grid" id="resultsGrid" aria-live="polite" aria-busy="false"></div>
+        </section>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-backdrop" data-close="modal"></div>
+        <div class="modal-content" role="document">
+            <button class="close" data-close="modal" aria-label="Close">✕</button>
+            <div class="modal-body">
+                <div class="modal-media" id="modalImage"></div>
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <div class="badges" id="modalBadges"></div>
+                    <div class="meta" id="modalMeta"></div>
+                    <div class="actions">
+                        <button id="viewRecommendations" class="primary">View Recommendations</button>
+                    </div>
+                    <div class="grid" id="recommendationsGrid" aria-live="polite" aria-busy="false"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toasts" class="toasts" aria-live="assertive" aria-atomic="true"></div>
+
+    <template id="card-skeleton">
+        <div class="card skeleton">
+            <div class="thumb shimmer"></div>
+            <div class="content">
+                <div class="line shimmer"></div>
+                <div class="line short shimmer"></div>
+            </div>
+        </div>
+    </template>
+
+    <footer class="app-footer" role="contentinfo">
+        <p>© <span id="year"></span> MultiDimension. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <noscript>Your browser needs JavaScript enabled for the best experience.</noscript>
+    <!-- Loading overlays and error templates are rendered by script.js -->
+</body>
+﻿</html>
+
+
